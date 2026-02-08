@@ -1,0 +1,1 @@
+install uv pakai cara pip install uv
