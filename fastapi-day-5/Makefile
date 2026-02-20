@@ -3,3 +3,6 @@ format:
 
 lint:
 	uv run ruff check
+
+dev:
+	uv run uvicorn app.main:app --reload

@@ -4,7 +4,15 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "alembic>=1.18.4",
+    "fastapi>=0.129.0",
+    "pydantic>=2.12.5",
+    "pydantic-settings>=2.13.1",
+    "scalar-fastapi>=1.6.2",
+    "sqlmodel>=0.0.34",
+    "uvicorn>=0.41.0",
+]
 
 [dependency-groups]
 dev = [
@@ -17,6 +25,4 @@ unsafe-fixes = true
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I"]
-
-[tool.ruff.format]
-preview = true
+exclude = ["alembic"]
