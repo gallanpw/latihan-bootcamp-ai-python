@@ -1,0 +1,36 @@
+Query: impact of generative AI on entry level job market statistics 2024 
+
+ Result: Based on the provided search results, here is a summary of key statistics and findings on the impact of generative AI on the entry-level job market, focused on 2024 and the surrounding period.
+
+### Key Statistics and Findings
+
+**1. CEO Expectations for 2024 Job Cuts:**
+*   **Statistic:** One in four CEOs (25%) expect generative AI to lead to job cuts of **5% or more in 2024**.
+*   **Source:** PwC survey of 4,702 CEOs across 105 countries.
+*   **URL:** https://www.toolify.ai/ai-news/ai-job-displacement-statistics-workforce-impact-20252027-3549458
+
+**2. Decline in Entry-Level Hiring at Tech Firms (2019-2024):**
+*   **Statistic:** A study of major tech firms and startups found a **50% decline in new role starts** by people with less than one year of post-graduate work experience between 2019 and 2024.
+*   **Source:** SignalFire State of Talent Report.
+*   **URL:** https://www.cnbc.com/2025/09/07/ai-entry-level-jobs-hiring-careers.html
+
+**3. Drop in Entry-Level Job Postings (2023-2024):**
+*   **Statistic:** Postings for entry-level jobs in the U.S. declined by **approximately 35% since January 2023**.
+*   **Source:** Labor research firm Revelio Labs, cited by CNBC.
+*   **URL:** https://www.cnbc.com/2025/09/07/ai-entry-level-jobs-hiring-careers.html
+
+**4. Impact on Young Workers in AI-Exposed Roles (Late 2022 - July 2025):**
+*   **Statistic:** Employment for workers aged 22-25 in occupations with high AI exposure fell by **6%** between late 2022 and July 2025. For specific roles:
+    *   Employment for the youngest software developers was **20% below** its late 2022 peak.
+    *   Employment for early-career customer service workers fell **nearly 11%** from its peak.
+*   **Source:** Stanford Digital Economy Lab study using ADP payroll data, published in August 2025.
+*   **URL:** https://www.adpresearch.com/yes-ai-is-affecting-employment-heres-the-data/
+
+**5. Broader Labor Market Context (Counterpoint):**
+*   **Finding:** A broader analysis from October 2025 suggests that while the occupational mix is changing, the pace is only about **1 percentage point higher** than during the adoption of the internet. The study notes it is "too soon to tell" how disruptive AI will be and that widespread economy-wide impacts are not yet evident.
+*   **Source:** The Budget Lab at Yale.
+*   **URL:** https://budgetlab.yale.edu/research/evaluating-impact-ai-labor-market-current-state-affairs
+
+### Summary
+The data indicates a significant and measurable impact of generative AI on the entry-level job market beginning in 2023 and extending into 2024-2025. Key trends include a sharp reduction in hiring for recent graduates, a decline in job postings for entry-level positions, and falling employment for young workers in highly exposed fields like software development and customer service. While business leaders anticipated job cuts in 2024, broader economic analyses caution that the full, disruptive impact on the labor market may unfold over a longer period, similar to past technological revolutions. 
+
