@@ -3,12 +3,15 @@
 # -> Each query going to search to the web
 # -> Summarize the results
 # -> Generate Report
-import json
-from app.utils import oa_client, tavily_client
-from app.schema import QueriesSchema
-# import logging
 
-# logger = logging.getLogger(__name__)
+import json
+import logging
+from app.utils.openai import oa_client
+from app.utils.tavily import tavily_client
+from .schema import QueriesSchema
+from .prompt import REPORT_SYSTEM_PROMPT
+
+logger = logging.getLogger(__name__)
 
 
 def generate_queries(topic: str) -> QueriesSchema:
@@ -28,8 +31,8 @@ def generate_queries(topic: str) -> QueriesSchema:
         raise ValueError("No response from OpenAI")
 
     parsed_data = response.choices[0].message.parsed.model_dump()  # type: ignore
-    # logger.info(f"Generated queries: {parsed_data}")
-    print(f"Generated queries: {parsed_data}")
+    logger.info(f"Generated queries: {parsed_data}")
+    # print(f"Generated queries: {parsed_data}")
 
     return QueriesSchema(**parsed_data)
 
@@ -42,7 +45,7 @@ def search_web(query: str) -> str:
     print(f"Search result: {result}")
 
     response = oa_client.chat.completions.create(
-        model="deepseek/deepseek-v3.2-exp",
+        model="openai/gpt-oss-120b",
         messages=[
             {
                 "role": "system",
@@ -55,3 +58,22 @@ def search_web(query: str) -> str:
     )
 
     return response.choices[0].message.content  # type: ignore
+
+
+def generate_report(topic: str, research_context: str):
+    response = oa_client.chat.completions.create(
+        model="openai/gpt-oss-120b",
+        messages=[
+            {
+                "role": "system",
+                # "content": "Generate 5 queries to search into the web based on user topic",
+                "content": REPORT_SYSTEM_PROMPT.format(
+                    research_context=research_context
+                ),
+            },
+            {"role": "user", "content": f"Topic: {topic}"},
+        ],
+        extra_body={"reasoning": {"enabled": True}},
+    )
+
+    return response.choices[0].message.content

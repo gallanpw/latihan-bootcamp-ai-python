@@ -1,29 +1,24 @@
-# Simple Deep Research
-# -> User Input a Topic
-# -> Generate sets of Queries
-# -> Each query going to search to the web
-# -> Summarize the results
-# -> Generate Report
+from fastapi import FastAPI
+from scalar_fastapi import get_scalar_api_reference
 
-# import logging
-from app.methods import generate_queries, search_web
+# from dotenv import load_dotenv
+from app.modules.research.schema import ResearchInput
+from app.modules.research.tasks import research_task
 
-# logger = logging.getLogger(__name__)
+# load_dotenv()
 
-
-def main():
-
-    research_context = ""
-    # logger.info("Starting workflow...")
-    queries = generate_queries("Entry Level Jobs risk in AI Era")
-    print(queries.queries)
-    for query in queries.queries[:1]:
-        result = search_web(query)
-        research_context = f"Query: {query} \n\n Result: {result} \n\n"
-
-    with open("research_context.txt", "w") as f:
-        f.write(research_context)
+app = FastAPI()
 
 
-if __name__ == "__main__":
-    main()
+@app.post("/research")
+def do_research(body: ResearchInput):
+    research_task.delay(body.topic)
+    return {"message": "Processing!"}
+
+
+@app.get("/scalar")
+def get_scalar():
+    return get_scalar_api_reference(
+        openapi_url=app.openapi_url,
+        title=app.title,
+    )
